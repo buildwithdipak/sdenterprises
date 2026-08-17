@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SD Enterprises — CCTV Camera &amp; IBMS Systems | Noida, Delhi, Gurugram</title>
+<meta name="description" content="SD Enterprises — professional CCTV camera and IBMS (Integrated Building Management System) installation across Noida, Delhi, Gurugram &amp; All India. Certified installers, fast response, GST registered.">
+<meta name="theme-color" content="#0b0b0d">
+
+<!-- Preconnect for faster font loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- Inline SVG favicon: camera lens mark, zero HTTP overhead -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0b0d'/%3E%3Ccircle cx='50' cy='50' r='32' fill='none' stroke='%23d4a537' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='12' fill='%23d4a537'/%3E%3C/svg%3E">
+
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --bg:#0b0b0d;
+    --bg-alt:#131316;
+    --panel:#17171b;
+    --line: rgba(212,165,55,0.16);
+    --gold:#d4a537;
+    --gold-bright:#f0c750;
+    --brass:#8a6a2f;
+    --ink:#f3efe4;
+    --ink-dim:#b9b4a6;
+    --steel:#5b6672;
+    --steel-dim:#2a2f36;
+    --danger-glow: rgba(212,165,55,0.35);
+    --radius: 4px;
+    --maxw: 1180px;
+    --display: 'Oswald', 'Arial Narrow', sans-serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  h1,h2,h3,h4{font-family:var(--display);margin:0;letter-spacing:0.01em;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  :focus-visible{outline:2px solid var(--gold-bright); outline-offset:3px;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:14px 26px;
+    border-radius:2px;
+    font-family:var(--display);
+    font-size:15px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    font-weight:600;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+  }
+  .btn-gold{
+    background:linear-gradient(180deg,var(--gold-bright),var(--gold));
+    color:#151107;
+    box-shadow:0 8px 24px -8px rgba(212,165,55,0.55);
+  }
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 12px 28px -8px rgba(212,165,55,0.7);}
+  .btn-outline{
+    background:transparent;
+    border-color:var(--line);
+    color:var(--ink);
+  }
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-2px);}
+
+  /* ============ NAV ============ */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,11,13,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+    max-width:var(--maxw); margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-mark{width:38px;height:38px;flex-shrink:0;}
+  .brand-text{font-family:var(--display); font-weight:700; font-size:20px; letter-spacing:0.02em; line-height:1;}
+  .brand-text span{display:block; font-family:var(--body); font-weight:500; font-size:10px; letter-spacing:0.22em; color:var(--gold); margin-top:3px;}
+
+  nav.links{display:flex; gap:34px;}
+  nav.links a{
+    font-size:13px; letter-spacing:0.06em; text-transform:uppercase; font-weight:600;
+    color:var(--ink-dim); position:relative; padding-bottom:4px;
+    transition:color .15s ease;
+  }
+  nav.links a::after{content:"";position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold); transition:width .2s ease;}
+  nav.links a:hover{color:var(--ink);}
+  nav.links a:hover::after{width:100%;}
+
+  .nav-cta{display:flex; align-items:center; gap:16px;}
+  .nav-cta .btn{padding:10px 18px; font-size:13px;}
+  .menu-btn{display:none; background:none; border:none; color:var(--ink); cursor:pointer; padding:6px;}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:96px 0 84px;
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(ellipse 60% 50% at 82% 18%, rgba(212,165,55,0.10), transparent 60%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(38px, 5.4vw, 66px);
+    font-weight:700;
+    line-height:1.03;
+    color:var(--ink);
+    margin:18px 0 20px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold);
+    background:linear-gradient(180deg,var(--gold-bright),var(--gold));
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hero p.lead{
+    font-size:17px; color:var(--ink-dim); max-width:480px; margin-bottom:32px;
+  }
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:40px;}
+
+  .trust-strip{
+    display:flex; gap:28px; flex-wrap:wrap;
+    padding-top:26px; border-top:1px solid var(--line);
+  }
+  .trust-item{display:flex; flex-direction:column; gap:2px;}
+  .trust-item strong{font-family:var(--mono); font-size:13px; color:var(--gold); letter-spacing:0.02em;}
+  .trust-item span{font-size:11px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.08em;}
+
+  /* Signature element: lens / aperture with radar sweep */
+  .lens-stage{
+    position:relative;
+    aspect-ratio:1/1;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .lens-stage svg{width:100%; height:100%; max-width:420px;}
+  .aperture-ring{
+    transform-origin:center;
+    animation: aperture-breathe 6s ease-in-out infinite;
+  }
+  @keyframes aperture-breathe{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.015); }
+  }
+  .blade{
+    transform-origin:210px 210px;
+    animation: blade-open 1.6s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .blade:nth-child(1){animation-delay:0.02s;}
+  .blade:nth-child(2){animation-delay:0.08s;}
+  .blade:nth-child(3){animation-delay:0.14s;}
+  .blade:nth-child(4){animation-delay:0.20s;}
+  .blade:nth-child(5){animation-delay:0.26s;}
+  .blade:nth-child(6){animation-delay:0.32s;}
+  @keyframes blade-open{
+    from{ transform:scale(0.35) rotate(0deg); opacity:0; }
+    to{ transform:scale(1) rotate(0deg); opacity:1; }
+  }
+  .sweep{
+    animation: sweep-rotate 4.5s linear infinite;
+    transform-origin:210px 210px;
+  }
+  @keyframes sweep-rotate{ to{ transform:rotate(360deg); } }
+  .lens-glow{ animation: glow-pulse 3.2s ease-in-out infinite; }
+  @keyframes glow-pulse{ 0%,100%{opacity:.5;} 50%{opacity:1;} }
+
+  /* ============ SECTION SHELL ============ */
+  section{padding:88px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px); margin:14px 0 16px; color:var(--ink);}
+  .section-head p{color:var(--ink-dim); font-size:15.5px;}
+  .alt{background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+
+  /* ============ SERVICES ============ */
+  .services-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  .service-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:36px 32px;
+    position:relative;
+    overflow:hidden;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .service-card:hover{border-color:var(--gold); transform:translateY(-4px);}
+  .service-card .icon{width:50px;height:50px;margin-bottom:22px;color:var(--gold);}
+  .service-card h3{font-size:23px; color:var(--ink); margin-bottom:12px;}
+  .service-card p{color:var(--ink-dim); font-size:14.5px; margin-bottom:20px;}
+  .service-card ul{display:flex; flex-direction:column; gap:9px;}
+  .service-card li{
+    font-size:13.5px; color:var(--ink-dim); display:flex; align-items:baseline; gap:10px;
+  }
+  .service-card li::before{content:"—"; color:var(--gold); flex-shrink:0;}
+
+  /* ============ FEATURES STRIP ============ */
+  .features{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .feature{background:var(--bg); padding:32px 26px;}
+  .feature .num{font-family:var(--mono); font-size:12px; color:var(--gold); letter-spacing:0.1em;}
+  .feature h4{font-size:17px; margin:14px 0 8px; color:var(--ink);}
+  .feature p{font-size:13.5px; color:var(--ink-dim); margin:0;}
+
+  /* ============ GALLERY ============ */
+  .gallery-tabs{display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap;}
+  .tab{
+    padding:9px 18px; border:1px solid var(--line); background:transparent; color:var(--ink-dim);
+    font-family:var(--mono); font-size:12px; letter-spacing:0.05em; text-transform:uppercase;
+    cursor:pointer; border-radius:2px; transition:all .15s ease;
+  }
+  .tab.active, .tab:hover{border-color:var(--gold); color:var(--gold);}
+
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows:190px;
+    gap:12px;
+  }
+  .gallery-item{
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+    cursor:pointer;
+    background:var(--panel);
+  }
+  .gallery-item.tall{grid-row:span 2;}
+  .gallery-item.wide{grid-column:span 2;}
+  .gallery-item img, .gallery-item .ph{
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .gallery-item:hover img, .gallery-item:hover .ph{transform:scale(1.08);}
+  .gallery-item .tag{
+    position:absolute; left:0; bottom:0; right:0;
+    padding:10px 12px;
+    background:linear-gradient(0deg, rgba(0,0,0,0.85), transparent);
+    font-family:var(--mono); font-size:11px; letter-spacing:0.05em; color:var(--gold-bright);
+    text-transform:uppercase;
+    opacity:0; transform:translateY(6px);
+    transition:all .2s ease;
+  }
+  .gallery-item:hover .tag{opacity:1; transform:translateY(0);}
+  .ph{
+    display:flex; align-items:center; justify-content:center;
+    background:
+      repeating-linear-gradient(135deg, rgba(212,165,55,0.06) 0 2px, transparent 2px 14px),
+      linear-gradient(160deg, #1c1c20, #101012);
+  }
+  .ph svg{width:34px; height:34px; color:var(--brass); opacity:0.7;}
+
+  .gallery-more{
+    display:flex; align-items:center; justify-content:center;
+    margin-top:36px;
+  }
+
+  .upload-note{
+    margin-top:20px; padding:16px 18px; border:1px dashed var(--line);
+    font-size:13px; color:var(--ink-dim); display:flex; gap:12px; align-items:flex-start;
+    border-radius:2px;
+  }
+  .upload-note svg{width:18px;height:18px; color:var(--gold); flex-shrink:0; margin-top:1px;}
+  .upload-note input[type=file]{display:none;}
+  .upload-note label{color:var(--gold); cursor:pointer; text-decoration:underline; text-underline-offset:2px;}
+
+  /* Lightbox */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(6,6,7,0.94); z-index:100;
+    display:none; align-items:center; justify-content:center; padding:40px;
+    backdrop-filter:blur(4px);
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(900px,92vw); max-height:82vh; border:1px solid var(--line); object-fit:contain;}
+  .lightbox-close{
+    position:absolute; top:26px; right:32px; background:none; border:1px solid var(--line);
+    color:var(--ink); width:40px; height:40px; cursor:pointer; font-size:20px; border-radius:2px;
+  }
+  .lightbox-close:hover{border-color:var(--gold); color:var(--gold);}
+  .lightbox-cap{position:absolute; bottom:34px; font-family:var(--mono); font-size:12px; color:var(--ink-dim); letter-spacing:0.05em;}
+
+  /* ============ LOCATION ============ */
+  .loc-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:0; border:1px solid var(--line);}
+  .loc-info{background:var(--panel); padding:44px; display:flex; flex-direction:column; gap:26px;}
+  .loc-row{display:flex; gap:16px;}
+  .loc-row .ic{width:22px; height:22px; color:var(--gold); flex-shrink:0; margin-top:2px;}
+  .loc-row h4{font-size:12px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); margin-bottom:6px; font-family:var(--mono); font-weight:600;}
+  .loc-row p{font-size:15px; color:var(--ink); margin:0;}
+  .map-embed{position:relative; min-height:380px; background:var(--steel-dim);}
+  .map-embed iframe{width:100%; height:100%; min-height:380px; border:0; filter:grayscale(0.25) contrast(1.05);}
+
+  /* ============ CONTACT ============ */
+  .contact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .contact-card{
+    background:var(--panel); border:1px solid var(--line); padding:30px 28px;
+    display:flex; flex-direction:column; gap:14px; transition:border-color .2s ease, transform .2s ease;
+  }
+  .contact-card:hover{border-color:var(--gold); transform:translateY(-4px);}
+  .contact-card .ic{width:30px; height:30px; color:var(--gold);}
+  .contact-card h4{font-size:12px; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-dim); font-family:var(--mono); font-weight:600;}
+  .contact-card .val{font-size:18px; color:var(--ink); font-weight:600;}
+  .contact-card .sub{font-size:13px; color:var(--ink-dim);}
+  .contact-card .go{
+    margin-top:auto; font-family:var(--mono); font-size:12px; color:var(--gold);
+    display:flex; align-items:center; gap:6px; letter-spacing:0.05em; text-transform:uppercase;
+  }
+  .contact-card .go svg{width:13px;height:13px; transition:transform .15s ease;}
+  .contact-card:hover .go svg{transform:translateX(4px);}
+
+  .gst-strip{
+    margin-top:24px; border:1px solid var(--line); padding:20px 28px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-family:var(--mono); background:var(--panel);
+  }
+  .gst-strip .label{font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-dim);}
+  .gst-strip .value{font-size:17px; color:var(--gold-bright); letter-spacing:0.06em; font-weight:600;}
+
+  /* ============ FOOTER ============ */
+  footer{border-top:1px solid var(--line); padding:52px 0 30px; background:var(--bg-alt);}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px;}
+  .foot-brand p{color:var(--ink-dim); font-size:13.5px; max-width:280px; margin-top:14px;}
+  .foot-col h5{font-size:12px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); margin-bottom:16px; font-family:var(--mono);}
+  .foot-col ul{display:flex; flex-direction:column; gap:10px;}
+  .foot-col a{font-size:14px; color:var(--ink-dim); transition:color .15s ease;}
+  .foot-col a:hover{color:var(--gold);}
+  .foot-bottom{
+    border-top:1px solid var(--line); padding-top:24px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  }
+  .foot-bottom p{font-size:12.5px; color:var(--ink-dim); margin:0;}
+  .foot-socials{display:flex; gap:14px;}
+  .foot-socials a{width:36px; height:36px; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; border-radius:2px; transition:border-color .15s ease, color .15s ease;}
+  .foot-socials a:hover{border-color:var(--gold); color:var(--gold);}
+  .foot-socials svg{width:16px; height:16px;}
+
+  /* WhatsApp floating button */
+  .float-wa{
+    position:fixed; right:22px; bottom:22px; z-index:60;
+    width:58px; height:58px; border-radius:50%;
+    background:linear-gradient(180deg,var(--gold-bright),var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 28px -6px rgba(212,165,55,0.6);
+    animation: float-pulse 2.6s ease-in-out infinite;
+  }
+  .float-wa svg{width:28px; height:28px; color:#151107;}
+  @keyframes float-pulse{ 0%,100%{transform:scale(1);} 50%{transform:scale(1.06);} }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:980px){
+    nav.links{display:none;}
+    .menu-btn{display:block;}
+    .hero-grid{grid-template-columns:1fr; gap:40px;}
+    .lens-stage{order:-1; max-width:260px; margin:0 auto;}
+    .services-grid{grid-template-columns:1fr;}
+    .features{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:160px;}
+    .loc-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:520px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:130px;}
+    .foot-grid{grid-template-columns:1fr;}
+    .trust-strip{gap:18px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="18" fill="#131316" stroke="#d4a537" stroke-width="2"/>
+        <circle cx="50" cy="50" r="26" stroke="#d4a537" stroke-width="4"/>
+        <circle cx="50" cy="50" r="9" fill="#d4a537"/>
+      </svg>
+      <span class="brand-text">SD ENTERPRISES<span>CCTV &amp; IBMS SYSTEMS</span></span>
+    </a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-gold" href="https://wa.me/916390832914" target="_blank" rel="noopener">Whatsapp Us</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Noida · Delhi · Gurugram · All India</p>
+      <h1>Security systems engineered to <em>watch every corner.</em></h1>
+      <p class="lead">SD Enterprises installs, wires and maintains CCTV camera networks and IBMS (Integrated Building Management Systems) for homes, offices and industrial sites — clean installs, honest pricing, fast callouts.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="https://wa.me/916390832914" target="_blank" rel="noopener">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.38-.49.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.61-.6-2.84-1.23-4.7-4.1-4.84-4.29-.14-.19-1.16-1.54-1.16-2.94s.73-2.09.99-2.37c.26-.28.56-.35.75-.35.19 0 .38 0 .54.01.17.01.4-.07.63.48.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <a class="btn btn-outline" href="tel:+919219323942">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+          Call 92193 23942
+        </a>
+      </div>
+      <div class="trust-strip">
+        <div class="trust-item"><strong>GST · 09JWGPK8523R1ZG</strong><span>Registered Business</span></div>
+        <div class="trust-item"><strong>Sector 66, Mamura</strong><span>Noida, UP</span></div>
+        <div class="trust-item"><strong>CCTV + IBMS</strong><span>Sales · Install · AMC</span></div>
+      </div>
+    </div>
+
+    <div class="lens-stage" aria-hidden="true">
+      <svg viewBox="0 0 420 420">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#d4a537" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#d4a537" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2a2f36"/>
+            <stop offset="100%" stop-color="#131316"/>
+          </linearGradient>
+        </defs>
+        <circle class="lens-glow" cx="210" cy="210" r="190" fill="url(#glow)"/>
+        <g class="aperture-ring">
+          <circle cx="210" cy="210" r="170" fill="url(#metal)" stroke="#3a3f47" stroke-width="2"/>
+          <circle cx="210" cy="210" r="170" fill="none" stroke="#d4a537" stroke-width="1.5" opacity="0.5"/>
+          <!-- aperture blades -->
+          <g>
+            <polygon class="blade" points="210,210 210,60 260,72" fill="#1c1c20" stroke="#d4a537" stroke-width="1" opacity="0.9"/>
+            <polygon class="blade" points="210,210 330,90 350,140" fill="#1c1c20" stroke="#d4a537" stroke-width="1" opacity="0.9"/>
+            <polygon class="blade" points="210,210 360,210 348,262" fill="#1c1c20" stroke="#d4a537" stroke-width="1" opacity="0.9"/>
+            <polygon class="blade" points="210,210 330,330 280,348" fill="#1c1c20" stroke="#d4a537" stroke-width="1" opacity="0.9"/>
+            <polygon class="blade" points="210,210 210,360 160,348" fill="#1c1c20" stroke="#d4a537" stroke-width="1" opacity="0.9"/>
+            <polygon class="blade" points="210,210 90,330 72,280" fill="#1c1c20" stroke="#d4a537" stroke-width="1" opacity="0.9"/>
+          </g>
+          <circle cx="210" cy="210" r="66" fill="#0b0b0d" stroke="#d4a537" stroke-width="2"/>
+          <circle cx="210" cy="210" r="48" fill="#111114" stroke="#8a6a2f" stroke-width="1"/>
+          <circle cx="188" cy="188" r="12" fill="#3a3f47" opacity="0.7"/>
+          <!-- radar sweep -->
+          <g class="sweep">
+            <path d="M210,210 L210,150 A60,60 0 0 1 262,180 Z" fill="#d4a537" opacity="0.25"/>
+          </g>
+          <circle cx="210" cy="210" r="4" fill="#f0c750"/>
+          <!-- rim bolts, echoes the physical signboard -->
+          <circle cx="46" cy="46" r="5" fill="none" stroke="#8a6a2f" stroke-width="2"/>
+          <circle cx="374" cy="46" r="5" fill="none" stroke="#8a6a2f" stroke-width="2"/>
+          <circle cx="46" cy="374" r="5" fill="none" stroke="#8a6a2f" stroke-width="2"/>
+          <circle cx="374" cy="374" r="5" fill="none" stroke="#8a6a2f" stroke-width="2"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What we do</p>
+      <h2>Two systems. One team.</h2>
+      <p>From a single dome camera on a shop shutter to a fully integrated building management setup — we scope, wire, install and support it.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="12" cy="12" r="9"/>
+          <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/>
+        </svg>
+        <h3>CCTV Camera Systems</h3>
+        <p>Dome, bullet, PTZ and covert cameras with HD/4K recording, night vision and remote mobile viewing.</p>
+        <ul>
+          <li>Site survey &amp; blind-spot mapping</li>
+          <li>DVR / NVR setup with cloud &amp; local backup</li>
+          <li>Mobile app access from anywhere</li>
+          <li>Annual maintenance contracts (AMC)</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="4" y="3" width="16" height="18" rx="1"/>
+          <path d="M8 8h2M8 12h2M8 16h2M14 8h2M14 12h2M14 16h2"/>
+        </svg>
+        <h3>IBMS Systems</h3>
+        <p>Integrated Building Management Systems that unify security, access control and building infrastructure on one dashboard.</p>
+        <ul>
+          <li>Access control &amp; biometric integration</li>
+          <li>Fire &amp; intrusion alarm tie-in</li>
+          <li>Centralized monitoring dashboard</li>
+          <li>Scalable for commercial &amp; industrial sites</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<div class="alt">
+  <div class="wrap" style="padding:0;">
+    <div class="features">
+      <div class="feature">
+        <p class="num">24×7</p>
+        <h4>Rapid Response</h4>
+        <p>Fault calls attended same day across Noida, Delhi &amp; Gurugram.</p>
+      </div>
+      <div class="feature">
+        <p class="num">GST</p>
+        <h4>Registered Vendor</h4>
+        <p>09JWGPK8523R1ZG — billed and documented for society &amp; corporate work.</p>
+      </div>
+      <div class="feature">
+        <p class="num">AMC</p>
+        <h4>Ongoing Maintenance</h4>
+        <p>Scheduled servicing so cameras and systems stay online year round.</p>
+      </div>
+      <div class="feature">
+        <p class="num">PAN-IN</p>
+        <h4>All India Reach</h4>
+        <p>Local team in NCR, project deployments handled across India.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Our work</p>
+      <h2>Recent installations</h2>
+      <p>A look at completed CCTV and IBMS jobs — homes, retail fronts, warehouses and office floors.</p>
+    </div>
+
+    <div class="gallery-tabs" role="tablist" aria-label="Filter gallery">
+      <button class="tab active" data-filter="all">All Work</button>
+      <button class="tab" data-filter="cctv">CCTV Installs</button>
+      <button class="tab" data-filter="ibms">IBMS &amp; Access</button>
+      <button class="tab" data-filter="wiring">Wiring &amp; Panels</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid"><!-- populated by JS --></div>
+
+    <div class="upload-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+      <div>
+        Business owner: drop real photos of completed jobs into <strong>images/gallery/</strong> and list the filenames in <strong>GALLERY_ITEMS</strong> at the top of script.js — they'll appear here automatically, sized and lazy-loaded for fast page load.
+        Or preview instantly: <label for="quickUpload">upload a sample photo</label>
+        <input type="file" id="quickUpload" accept="image/*">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <p class="lightbox-cap" id="lightboxCap"></p>
+</div>
+
+<!-- ============ LOCATION ============ -->
+<div class="alt" id="location">
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Find us</p>
+        <h2>Where to reach the workshop</h2>
+        <p>Based in Sector 66, Mamura, Noida — serving all of NCR and taking projects across India.</p>
+      </div>
+      <div class="loc-grid">
+        <div class="loc-info">
+          <div class="loc-row">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <div>
+              <h4>Address</h4>
+              <p>House 171, Gali No. 1/2<br>Sector 66, Mamura, Noida<br>Uttar Pradesh, India</p>
+            </div>
+          </div>
+          <div class="loc-row">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+            <div>
+              <h4>Phone / WhatsApp</h4>
+              <p><a href="tel:+916390832914">63908 32914</a> &nbsp;·&nbsp; <a href="tel:+919219323942">92193 23942</a></p>
+            </div>
+          </div>
+          <div class="loc-row">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 6l9 7 9-7"/></svg>
+            <div>
+              <h4>Service Areas</h4>
+              <p>Noida · Delhi · Gurugram · All India (on project basis)</p>
+            </div>
+          </div>
+          <a class="btn btn-gold" style="align-self:flex-start;" href="https://maps.app.goo.gl/J3rhoxtdtyNJPoBo9" target="_blank" rel="noopener">
+            Get Directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Sector%2066%2C%20Mamura%2C%20Noida%2C%20Uttar%20Pradesh&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="SD Enterprises location map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Talk to us before you buy</h2>
+      <p>Send your site photos on WhatsApp for a free quote, or follow our install work on Instagram.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-card" href="https://wa.me/916390832914" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>
+        <h4>WhatsApp</h4>
+        <div class="val">63908 32914</div>
+        <div class="sub">Fastest way to reach us — share your site photos</div>
+        <span class="go">Open Chat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="contact-card" href="https://wa.me/919219323942" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+        <h4>Direct Line</h4>
+        <div class="val">92193 23942</div>
+        <div class="sub">Call for urgent breakdowns or site visits</div>
+        <span class="go">Call Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="contact-card" href="https://www.instagram.com/sd_enterprises_345734?igsh=bXFjaWl1Z2Z3aG4y" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <h4>Instagram</h4>
+        <div class="val">@sd_enterprises_345734</div>
+        <div class="sub">See real install photos &amp; reels</div>
+        <span class="go">Follow <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+
+    <div class="gst-strip">
+      <div>
+        <p class="label">GST Registration Number</p>
+        <p class="value">09JWGPK8523R1ZG</p>
+      </div>
+      <div>
+        <p class="label">Owner</p>
+        <p class="value" style="font-size:15px;">Dilip Gupta — SD Enterprises</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" rx="18" fill="#131316" stroke="#d4a537" stroke-width="2"/>
+            <circle cx="50" cy="50" r="26" stroke="#d4a537" stroke-width="4"/>
+            <circle cx="50" cy="50" r="9" fill="#d4a537"/>
+          </svg>
+          <span class="brand-text">SD ENTERPRISES<span>CCTV &amp; IBMS SYSTEMS</span></span>
+        </div>
+        <p>Har-Har Mahadev, Baba Shyam Hamara — CCTV camera and IBMS system installation across Noida, Delhi, Gurugram and All India.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">CCTV Cameras</a></li>
+          <li><a href="#services">IBMS Systems</a></li>
+          <li><a href="#services">AMC &amp; Support</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+916390832914">63908 32914</a></li>
+          <li><a href="tel:+919219323942">92193 23942</a></li>
+          <li><a href="https://maps.app.goo.gl/J3rhoxtdtyNJPoBo9" target="_blank" rel="noopener">Sector 66, Mamura, Noida</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span id="year"></span> SD Enterprises. GST 09JWGPK8523R1ZG. All rights reserved.</p>
+      <div class="foot-socials">
+        <a href="https://www.instagram.com/sd_enterprises_345734?igsh=bXFjaWl1Z2Z3aG4y" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://wa.me/916390832914" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="float-wa" href="https://wa.me/916390832914" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.38-.49.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.61-.6-2.84-1.23-4.7-4.1-4.84-4.29-.14-.19-1.16-1.54-1.16-2.94s.73-2.09.99-2.37c.26-.28.56-.35.75-.35.19 0 .38 0 .54.01.17.01.4-.07.63.48.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+</a>
+
+<script src="script.js" defer></script>
+</body>
+</html>
