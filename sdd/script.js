@@ -1,11 +1,6 @@
-/* =====================================================================
+
    SD ENTERPRISES — site script
-   Gallery is data-driven: edit GALLERY_ITEMS below to swap in real
-   photos. Drop the image files into images/gallery/ and point "src"
-   at that path — everything else (filtering, layout, lightbox) just
-   works. Until real photos are added, work-type placeholders render
-   instead, so the page never looks broken or empty.
-   ===================================================================== */
+
 
 const GALLERY_ITEMS = [
   { src: "images/gallery/cctv-dome-install-1.jpg", category: "cctv",   label: "Dome camera install — residential",   size: "wide" },
